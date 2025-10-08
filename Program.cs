@@ -128,6 +128,14 @@ namespace _1_7_Summative
         }
         static void Main(string[] args)
         {
+            string theme;
+
+            Console.BackgroundColor = ConsoleColor.Black;
+
+            Console.Clear();
+
+            Console.ForegroundColor = ConsoleColor.White;
+
             Random generator;
             generator = new Random();
 
@@ -148,12 +156,13 @@ RULE | NO CENTS ALLOWED
 1. Rock Paper Scissor
 2. Quit
 3. Rules
+4. Settings
 ");
                     menu = true;
                 }
                 else
                 {
-                    Console.WriteLine("1. Rock Paper Scissor\r\n2. Quit\r\n3. Rules");
+                    Console.WriteLine("1. Rock Paper Scissor\r\n2. Quit\r\n3. Rules\r\n4. Settings");
                 }
                     project = Console.ReadLine();
 
@@ -174,10 +183,119 @@ RULE | NO CENTS ALLOWED
                     moneygain();
                     done = true;
                 }
-                else if (project == "3") 
+                else if (project == "3")
                 {
-                    Console.Clear ();
+                    Console.Clear();
                     Console.WriteLine("THE ONLY RULE IS ONLY INPUT INTEGERSSSS, because my system is not too intelligented.\n By the way, the game work by just you inputting your bet and your choice and then I will tell you how much I scam you for.");
+                }
+                else if (project == "4") 
+                {
+                    bool color = false;
+
+                    while (!color)
+                    {
+                        Console.WriteLine(@"
+The following list have all the available color settings
+Light
+Dark
+Cyan
+Blue
+Green (ew)
+Emomo
+Red
+Magenta
+Yellow
+                    ");
+
+                        theme = Console.ReadLine().ToLower();
+
+                        if (theme == "light")
+                        {
+                            Console.BackgroundColor = ConsoleColor.White;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.Black;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "dark")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Black;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.White;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "cyan")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Cyan;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkCyan;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "blue")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Blue;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkBlue;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "green")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Green;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkGreen;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "emomo")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Gray;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkGray;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "red")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Red;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkRed;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "magenta")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Magenta;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkMagenta;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else if (theme == "yellow")
+                        {
+                            Console.BackgroundColor = ConsoleColor.Yellow;
+                            Console.Clear();
+                            Console.ForegroundColor = ConsoleColor.DarkYellow;
+                            Console.WriteLine("Amazing, now press ENTER to play the game");
+                            Console.ReadLine();
+                            color = true;
+                        }
+                        else
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Invalid input, check your spellings.");
+                        }
+                    }
                 }
                 else if (money == 0)
                 {
@@ -187,7 +305,7 @@ RULE | NO CENTS ALLOWED
                 else
                 {
                     Console.Clear();
-                    Console.WriteLine("Invalid input, enter \"1\" or \"2\", it's not that hard.");
+                    Console.WriteLine("Invalid input, enter \"1\" or \"2\" or \"3\" or \"4\", it's not that hard.");
                 }
             }
         }
